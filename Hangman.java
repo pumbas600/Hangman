@@ -28,13 +28,13 @@ public class Hangman
 
         print("enter file path of txt document: E.G: D:\\words.txt");
         String filePath = reader.nextLine();
+        if(filePath.length() == 0) System.exit(0);
 
         String randomWord = "";
         FileInputStream fileName;
         int rn = (int) (Math.random() * 3000); //Selecting a random word between 0 and 3000.
         try
         {
-            //"D:\\Eclipse\\Workspace\\Hangman\\words.txt"
             fileName = new FileInputStream(filePath);
             BufferedReader br = new BufferedReader(new InputStreamReader(fileName));
             for (int i = 0; i < rn; i++)
